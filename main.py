@@ -69,7 +69,7 @@ class CandidateGenerator:
         self.mentions = set(json_load("data/mentions.json"))
         print(len(self.mentions), "mentions")
         self.mention_to_candidates_dict = pickle_load("data/mention_to_candidates_dict.pkl")
-        print(len(self.mention_to_candidates_dict), "mentions with candidates")
+        print(len(self.mention_to_candidates_dict), "mention-candidate mappings")
 
     def add_anchors_and_candidates(self, article: dict):
         anchors = []

@@ -68,12 +68,12 @@ class EfficientEL(LightningModule):
         parser.add_argument(
             "--mentions_filename",
             type=str,
-            default="../data/mentions.json",
+            default="data/mentions.json",
         )
         parser.add_argument(
             "--entities_filename",
             type=str,
-            default="../data/entities.json",
+            default="data/entities.json",
         )
         parser.add_argument("--epsilon", type=float, default=0.1)
         return parser
@@ -97,7 +97,7 @@ class EfficientEL(LightningModule):
         self.entity_detection = EntityDetectionFactor(
             self.hparams.max_length_span,
             self.hparams.dropout,
-            mentions_filename=self.hparams.mentions_filename,
+            mentions_filename="data/mentions.json",
         )
 
         self.entity_linking = EntityLinkingLSTM(
